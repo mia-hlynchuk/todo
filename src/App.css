@@ -1,0 +1,45 @@
+.todoApp {
+  max-width: 400px;
+}
+
+.todoApp h1 {
+  text-align: center;
+  color: #330099;
+}
+
+.todoApp .task-input {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+
+.todoApp .task-input input {         
+  min-width: 250px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 10px;
+  border: 2px solid #c0c0c0;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+}
+
+.todoApp .task-input button {
+  margin: 10px;
+  padding: 12px;
+  border: 2px solid #330099;
+  border-radius: 5px;
+  background-color: #330099;
+  color: #fff;
+}
+
+.todoApp .task-input button:hover {
+  background-color: #c0c0c0;
+  border: 2px solid #c0c0c0;
+  cursor: pointer;
+}
+
+.todoApp .list {
+  padding: 5px;
+  list-style: none;
+}
