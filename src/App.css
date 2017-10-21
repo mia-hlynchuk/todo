@@ -43,3 +43,13 @@
   padding: 5px;
   list-style: none;
 }
+
+.todoApp .list .checked {
+  text-decoration: line-through;
+  color: #b7b7b7;
+}
+
+.todoApp .list li label,
+.todoApp .list li input {
+  cursor: pointer;
+}
