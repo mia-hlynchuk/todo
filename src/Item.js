@@ -8,6 +8,7 @@ class Item extends Component {
       checked: false
     };
     this.checkOrUncheck = this.checkOrUncheck.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   checkOrUncheck() {
@@ -23,11 +24,16 @@ class Item extends Component {
     }
   }
 
+  delete(key) {    
+    this.props.onDelete(key);
+  }
+
   render() {
     console.log(this.props.text);
     return (
       <li className={this.state.checked ? 'checked' : null}> 
         <label><input type="checkbox" onChange={this.checkOrUncheck}/>{this.props.text}</label>
+        <button className="delete" onClick={this.delete}>x</button>
       </li>
     );
   }

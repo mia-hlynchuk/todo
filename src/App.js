@@ -9,6 +9,7 @@ class App extends Component {
       items: []
     };
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   addItem(e) {
@@ -28,6 +29,11 @@ class App extends Component {
     this.inputEle.value = "";
   }
 
+  deleteItem(key) {
+    var items = this.state.items.filter( item => item.key !== key);
+    this.setState({items});
+  }
+
   render() {
     return (
       <div className="todoApp">
@@ -42,7 +48,9 @@ class App extends Component {
         </div>   
         <ul className="list">
           {
-            this.state.items.map((item) => ( <Item key={item.key} text={item.text}/> ))
+            this.state.items.map((item) => ( 
+              <Item key={item.key} text={item.text} onDelete={() => this.deleteItem(item.key)}/> 
+            ))
           }
         </ul>  
       </div>
