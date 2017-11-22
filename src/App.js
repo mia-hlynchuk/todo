@@ -12,6 +12,20 @@ class App extends Component {
     this.deleteItem = this.deleteItem.bind(this);
   }
 
+  componentWillMount() {
+    // check if there is anything in the localStorage
+    if (localStorage.todo_tasks) {
+      this.setState({
+        items: JSON.parse(localStorage.todo_tasks) 
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    // update the localStorage accordingly 
+    localStorage.setItem("todo_tasks", JSON.stringify(this.state.items));
+  }
+
   addItem(e) {
     e.preventDefault();
 
@@ -30,10 +44,10 @@ class App extends Component {
   }
 
   deleteItem(key) {
-    var items = this.state.items.filter( item => item.key !== key);
-    this.setState({items});
+    var items = this.state.items.filter(item => item.key !== key);
+    this.setState({ items });
   }
-
+ 
   render() {
     return (
       <div className="todoApp">

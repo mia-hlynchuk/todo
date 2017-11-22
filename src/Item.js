@@ -29,7 +29,6 @@ class Item extends Component {
   }
 
   render() {
-    console.log(this.props.text);
     return (
       <li className={this.state.checked ? 'checked' : null}> 
         <label><input type="checkbox" onChange={this.checkOrUncheck}/>{this.props.text}</label>
